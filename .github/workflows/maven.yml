@@ -28,8 +28,3 @@ jobs:
       run: |
        cd demo/
        mvn -B package --file pom.xml
-
-    - name: Run tests
-      run: |
-       cd demo/
-       mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
