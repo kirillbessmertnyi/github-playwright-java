@@ -26,8 +26,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-       cd demo
+       cd demo/
        mvn -B package --file pom.xml
 
     - name: Run tests
-      run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+      run: |
+       cd demo/
+       mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
